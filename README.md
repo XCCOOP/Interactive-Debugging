@@ -1,4 +1,4 @@
-Interactive-Debugging
+﻿Interactive-Debugging
 =====================
 
 Lab on using the interactive debugger
@@ -11,15 +11,27 @@ Step 1
 ------
 Create a project file, and add sierpinski.cpp to the project. Also, look at correct-triangle.html to see an example of correct output. Skim/read the source code for sierpinski.cpp, and try to answer the following questions:
 
-* 1.a) What is the purpose of this program?
+* 1.a) What is the purpose of this program? 
+
+	To create a sierpinski triangle webpage.
+
 * 1.b) Does the program produce output? If so, what kind of output is it, and where does it end up?
+
+	Yes, an html file in the project folder that produces a giant rectangle of I's.
+
 * 1.c) Does the program accept input? If so, what kind of input, and how is it provided?
+
+	In the main method the input for doTriangle() is the size of the triangle.
+
 
 Step 2
 -------
 Build and run Sierpinski. An output file called “triangle.html” should be placed in your project directory, along with your source code. The file should exist, but you will notice that its contents do not look much like the correct output.
 
 * 2.a) List all the ways that you can see that the current output of your program is different from the expected output.
+
+	Current output is a rectangle rather than the triangle and it is made of Í's rather than 8's.
+
 
 Step 3
 ------
@@ -29,6 +41,7 @@ The characters to print out in the main part of the file are stored in a big arr
 
 * 3.a) Explain one or two methods you could use to determine which of the three parts of the program is causing this first bug. (In step 4, I will tell you how I would do it.)
 
+	Place break points at each of these stages and try and find where the strange symbol.
  
 Step 4
 ------
@@ -40,17 +53,26 @@ When your program stops at the first breakpoint, scroll up until you find the va
 
 * 4.a) What would you expect grid to contain before the bug starts hopping? What does it actually contain at this point?
 
+	I would expect it to contain an empty space or an 8.  Instead it contains a bunch of Í's and then an 8 at the end.
+
+
 Hint: In order to get a better look at the contents of grid (which is an array of characters), in the QuickWatch window, select the drop-down box at the end of the “value” column and choose “text visualizer.” This should pop up a window that gives you view of everything contained in grid. The view in the QuickWatch window cuts off when it runs out of room.
 
 If everything was as you expected in question 4.a, then hit the play button again to continue debugging. Repeat the QuickWatch process (inspecting the grid variable) when you hit the next breakpoint.
 
 * 4.b) Based on your observations so far, which of the three parts of the program (setup, making the triangle, printing the triangle) must contain our first bug?
 
+	Filling the triangle in with blank spaces.
+
+
 Step 5
 ------
 In the previous step you should have identified that the bug is occurring in the setup phase of the program. The evidence is that, at the end of the startup phase, the array called “grid” contains lots of weird looking characters, instead of spaces, as we would expect.
 
 * 5.a) Which lines in the code look like they should set the grid to be full of spaces?
+
+	65
+
 
 Step 6
 ------

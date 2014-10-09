@@ -58,9 +58,9 @@ void doTriangle(int sideLength)
 	 *  probably crash if you do "cout << grid;"
 	 */
 	grid[sideLength*sideLength] = '\0';
-
+	
 	int i;
-	for(i=0; i < sideLength*sideLength; i++);
+	for(i=0; i < sideLength*sideLength; i++)
 	{
 		grid[i] = ' ';
 	}
